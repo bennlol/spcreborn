@@ -167,7 +167,7 @@ def get_grades(username, password):
     page = page[tardyIndex+1:]
     pagenospace = ["".join(line.split(" ")) for line in page]
     perIndexes = [pagenospace[x-1] for x in range(len(page)) if page[x] and page[x][-1]=="."]
-    classes = [page[x] for x in range(len(page)) if len(pagenospace[x])>3 and pagenospace[x][-1]!="."][:len(perIndexes)]
+    classes = [page[x] for x in range(len(page)) if len(pagenospace[x])>4 and pagenospace[x][-1]!="."][:len(perIndexes)]
     # access_token = create_jwt_token(data={"sub": username}, expires_delta=ACCESS_TOKEN_EXPIRE_MINUTES)
     # memoryDB[username] = [classes, perIndexes, time.time()]
     return {'classes':classes, 'grades':perIndexes}
